@@ -53,5 +53,11 @@
             "php": "8.1.99"
         },
         "sort-packages": true
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hiqdev/CodeGenerationUtils"
+        }
+    ]
 }
