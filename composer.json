@@ -1,9 +1,9 @@
 {
-    "name":              "ocramius/generated-hydrator",
+    "name":              "hiqdev/generated-hydrator",
     "description":       "An Object Hydrator that allows very fast array to object to array conversion",
     "type":              "library",
     "license":           "MIT",
-    "homepage":          "https://github.com/Ocramius/GeneratedHydrator",
+    "homepage":          "https://github.com/hiqdev/GeneratedHydrator",
     "keywords":          [
         "hydrator",
         "performance",
@@ -19,15 +19,15 @@
         }
     ],
     "require": {
-        "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
+        "php": "^8.3",
         "laminas/laminas-hydrator": "^4.14.0",
-        "nikic/php-parser": "^4.16.0",
-        "ocramius/code-generator-utils": "^1.7.0"
+        "nikic/php-parser": "^5.6.1",
+        "hiqdev/code-generator-utils": "^1.9.0"
     },
     "require-dev": {
         "doctrine/coding-standard": "^12.0.0",
         "phpbench/phpbench": "^1.2.14",
-        "phpunit/phpunit": "^9.6.10",
+        "phpunit/phpunit": "^12.0",
         "psalm/plugin-phpunit": "^0.18.4",
         "roave/infection-static-analysis-plugin": "^1.32.0",
         "vimeo/psalm": "^5.13.1"

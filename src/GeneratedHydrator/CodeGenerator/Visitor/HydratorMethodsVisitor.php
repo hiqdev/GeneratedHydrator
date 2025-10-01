@@ -168,15 +168,15 @@ class HydratorMethodsVisitor extends NodeVisitorAbstract
         }
 
         $method->stmts = (new ParserFactory())
-            ->create(ParserFactory::ONLY_PHP7)
+            ->createForHostVersion()
             ->parse('<?php ' . implode("\n", $bodyParts));
     }
 
     private function replaceHydrate(ClassMethod $method): void
     {
         $method->params     = [
-            new Param(new Node\Expr\Variable('data'), null, 'array'),
-            new Param(new Node\Expr\Variable('object'), null, 'object'),
+            new Param(new Node\Expr\Variable('data'), null, new Node\Identifier('array')),
+            new Param(new Node\Expr\Variable('object'), null, new Node\Identifier('object')),
         ];
         $method->returnType = new Identifier('object');
 
@@ -193,13 +193,13 @@ class HydratorMethodsVisitor extends NodeVisitorAbstract
         $bodyParts[] = 'return $object;';
 
         $method->stmts = (new ParserFactory())
-            ->create(ParserFactory::ONLY_PHP7)
+            ->createForHostVersion()
             ->parse('<?php ' . implode("\n", $bodyParts));
     }
 
     private function replaceExtract(ClassMethod $method): void
     {
-        $method->params     = [new Param(new Node\Expr\Variable('object'), null, 'object')];
+        $method->params = [new Param(new Node\Expr\Variable('object'), null, new Node\Identifier('object'))];
         $method->returnType = new Identifier('array');
 
         $bodyParts   = [];
@@ -217,7 +217,7 @@ class HydratorMethodsVisitor extends NodeVisitorAbstract
         $bodyParts[] = 'return $ret;';
 
         $method->stmts = (new ParserFactory())
-            ->create(ParserFactory::ONLY_PHP7)
+            ->createForHostVersion()
             ->parse('<?php ' . implode("\n", $bodyParts));
     }
 
