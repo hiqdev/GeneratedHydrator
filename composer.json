@@ -22,7 +22,7 @@
         "php": "^8.3",
         "laminas/laminas-hydrator": "^4.14.0",
         "nikic/php-parser": "^5.6.1",
-        "ocramius/code-generator-utils": "^1.9.0"
+        "hiqdev/code-generator-utils": "^1.9.0"
     },
     "replace": {
         "ocramius/generated-hydrator": "self.version"
